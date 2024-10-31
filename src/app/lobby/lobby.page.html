@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>Bienvenido al Inicio {{nombreUsuario}}</h2>
+
+  <h2>{{ nombreTienda }}</h2>
+  <img [src]="imagenUrl" alt="Imagen de la tienda" width="150" height="150" />
+
+  <ion-button expand="block" (click)="irAClientes()">Clientes</ion-button>
+  <ion-button expand="block" (click)="irAProductos()">Productos</ion-button>
+  <ion-button expand="full"color="danger" routerLink="/login">Cerrar sesión</ion-button>
+</ion-content>

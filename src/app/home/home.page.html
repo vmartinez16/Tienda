@@ -1,0 +1,66 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title>
+      Lista de productos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" padding="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Lista de productos</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-button expand="full" routerLink="/lobby">Ir al inicio</ion-button>
+  <ion-item>
+    <ion-label position="stacked">Nombre del producto</ion-label>
+    <ion-input [(ngModel)]="producto.nombre"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="stacked">Descripción</ion-label>
+    <ion-input [(ngModel)]="producto.descripcion"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Cantidad</ion-label>
+    <ion-input type="number" [(ngModel)]="producto.cantidad"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Precio de costo</ion-label>
+    <ion-input type="number" [(ngModel)]="producto.precioCosto"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Precio de venta</ion-label>
+    <ion-input type="number" [(ngModel)]="producto.precioVenta"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">URL de imagen</ion-label>
+    <ion-input [(ngModel)]="producto.imagenUrl"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" color="danger" (click)="agregarProducto()">
+    {{ isEditing ? 'Editar producto' : 'Agregar producto' }}
+  </ion-button>
+
+  <ion-list>
+    <ion-card *ngFor="let producto of productos; let i = index ">
+      <ion-card-header>
+        <ion-card-title>{{ producto.nombre }}</ion-card-title>
+        <ion-card-subtitle>{{ producto.descripcion }}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Cantidad: {{ producto.cantidad }}</p>
+        <p>Precio de costo: {{ producto.precioCosto }}</p>
+        <p>Precio de venta: {{ producto.precioVenta }}</p>
+        <img [src]="producto.imagenUrl" alt="Imagen del producto" width="100" height="100">
+      </ion-card-content>
+      <ion-button color="danger" (click)="eliminarProducto(i)">Eliminar</ion-button>
+      <ion-button color="primary" (click)="seleccionarProducto(i)">Editar</ion-button>      
+    </ion-card>
+  </ion-list>
+</ion-content>

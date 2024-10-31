@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label position="stacked">Usuario</ion-label>
+    <ion-input [(ngModel)]="usuario"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Contraseña</ion-label>
+    <ion-input type="password" [(ngModel)]="contrasena"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Recordar credenciales</ion-label>
+    <ion-checkbox [(ngModel)]="recordar"></ion-checkbox>
+  </ion-item>
+
+  <ion-button expand="block" (click)="iniciarSesion()">Iniciar Sesión</ion-button>
+  <ion-button expand="block" color="light" (click)="abrirRegistro()">Registro</ion-button>
+  
+</ion-content>

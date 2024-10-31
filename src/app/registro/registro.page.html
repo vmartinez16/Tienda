@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>Registro</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrarModal()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label position="stacked">Nombre</ion-label>
+    <ion-input [(ngModel)]="nuevoUsuario.nombre"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Usuario</ion-label>
+    <ion-input [(ngModel)]="nuevoUsuario.usuario"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Contraseña</ion-label>
+    <ion-input type="password" [(ngModel)]="nuevoUsuario.contrasena"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Nombre de la Tienda</ion-label>
+    <ion-input [(ngModel)]="nuevoUsuario.nombreTienda"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">URL de Foto de la Tienda</ion-label>
+    <ion-input [(ngModel)]="nuevoUsuario.imagenUrl"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" (click)="registrarUsuario()">Registrar</ion-button>
+</ion-content>
